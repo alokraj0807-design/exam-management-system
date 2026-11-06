@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExamPro | Exam Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="authScreen" class="auth-screen">
+    <form id="loginForm" class="auth-card">
+      <div class="brand-mark">EP</div>
+      <h1>ExamPro</h1>
+      <p class="muted">Exam Management System</p>
+      <label>Email address</label>
+      <input id="loginEmail" type="email" value="admin@exampro.com" required>
+      <label>Password</label>
+      <input id="loginPassword" type="password" value="admin123" required>
+      <button class="btn primary full" type="submit">Sign in</button>
+      <p class="hint">Demo login: admin@exampro.com / admin123</p>
+    </form>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="brand-mark small">EP</span><span>ExamPro</span></div>
+      <div class="nav-label">MAIN MENU</div>
+      <nav id="navigation">
+        <button class="nav-item active" data-page="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-item" data-page="exams"><span>▤</span> Exam Scheduling</button>
+        <button class="nav-item" data-page="subjects"><span>▣</span> Subject Management</button>
+        <button class="nav-item" data-page="halltickets"><span>▧</span> Hall Tickets</button>
+        <button class="nav-item" data-page="online"><span>◷</span> Online Examination</button>
+        <button class="nav-item" data-page="answers"><span>☷</span> Answer Sheets</button>
+        <button class="nav-item" data-page="results"><span>✓</span> Result Processing</button>
+        <button class="nav-item" data-page="marksheets"><span>▥</span> Student Marksheet</button>
+        <button class="nav-item" data-page="reports"><span>▨</span> Reports</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="profile"><div class="avatar">A</div><div><b>Administrator</b><small>Admin account</small></div></div>
+        <button id="logoutBtn" class="logout">↪ Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="menuToggle" class="icon-btn" aria-label="Toggle menu">☰</button>
+        <div><span class="top-title">Administration</span><span class="breadcrumb"> / <span id="currentPage">Dashboard</span></span></div>
+        <div class="top-actions"><span class="date-label" id="todayLabel"></span><div class="avatar">A</div></div>
+      </header>
+      <div id="pageContent" class="content"></div>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-card"><div class="modal-head"><h2 id="modalTitle">Add item</h2><button class="icon-btn" data-close="true">✕</button></div><div id="modalBody"></div></div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
